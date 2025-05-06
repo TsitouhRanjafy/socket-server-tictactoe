@@ -11,7 +11,7 @@ const app = express();
 const serverNode = createServer(app);
 const io = new ServerSocket(serverNode,{
     cors: {
-        origin: `${env().cors_origin}`,
+        origin: [`${env().cors_origin}`,`${env().cors_origin_dev}`],
         methods: ['GET','POST'],
         allowedHeaders: ['Content-type'],
         credentials: true
